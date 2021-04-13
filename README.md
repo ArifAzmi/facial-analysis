@@ -1,6 +1,7 @@
 # Facial Analysis
 
 Juptyer Notebook containing facial analysis and training models of images from: https://github.com/MicrosoftDocs/ai-fundamentals
+
 Additions were made by adding real-time video analysis using OpenCV and Microsoft's Face Cognitive Service: https://azure.microsoft.com/en-ca/services/cognitive-services/face/
 
 ### Setup
