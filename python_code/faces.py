@@ -75,6 +75,8 @@ def get_face_attributes(image_path, detected_faces, index):
     img = Image.open(image_path)
     
     annotations = ''
+    happinessScore = 0
+    attributeText = ''
     
     if detected_faces:
         # If there are faces, how many?
@@ -99,7 +101,6 @@ def get_face_attributes(image_path, detected_faces, index):
             
             # Get all attributes to display
             txt_lines = 0
-            attributeText = ''
             for attribute in detected_attributes:
                 txt_lines += 1
                 attributeText += '{}: {}\n'.format(attribute, detected_attributes[attribute])
@@ -134,12 +135,15 @@ def makePlot(i, xList, yList, happinessAvg):
         ax.set_ylabel('Happiness Score')
         #ax.text(0, 0, str(happinessAvg), verticalalignment='top', horizontalalignment = 'right', transform=ax.transAxes)
 
-    plt.ion() # enable interactivity
+    # plt.ion() # enable interactivity
+    plt.ioff()
     fig=plt.figure() # make a figure
+    plt.ioff()
 
     makeFig()      #The drawnow(makeFig) command can be replaced
     # plt.draw()     #with makeFig(); plt.draw()
     plt.savefig(path + '/plot' + str(i))
+    plt.close()
     plt.pause(0.001)
 
 
